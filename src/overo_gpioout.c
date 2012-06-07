@@ -31,7 +31,7 @@ typedef struct overo_gpioout
 {
 	t_object x_obj;
 	int gpioNum;
-	char outfile[32];
+	char outfile[40];
 	FILE *fs;
 	int set; //0 or 1
 } t_overo_gpioout;
@@ -62,9 +62,9 @@ void *overo_gpioout_new(t_floatarg f)
     t_overo_gpioout *x = (t_overo_gpioout *)pd_new(overo_gpioout_class);
 	int nums[]={144,170,145};
 	x->gpioNum=nums[min(2,max(0,((int) f)-1))]; //maps switch number to GPIO number
-	post("overo_gpoout: using GPIO(%d): switch %d\n",x->gpioNum,min(2,max(1,(int) f)));
+	post("overo_gpoout: using GPIO(%d): switch %d\n",x->gpioNum,min(3,max(1,(int) f)));
 	sprintf(x->outfile,"/sys/class/gpio/gpio%d/value",x->gpioNum);
-	post("outfile: %s\n",x->outfile);
+	//post("outfile: %s\n",x->outfile);
 
 	char gpionum[4];
 	sprintf(gpionum,"%d",x->gpioNum);
@@ -79,16 +79,16 @@ void *overo_gpioout_new(t_floatarg f)
 	int t=fwrite( gpionum, sizeof(char), 3, x->fs );
 	fclose(x->fs);
 	
-	char dirfile[35];
+	char dirfile[40];
 	sprintf(dirfile,"/sys/class/gpio/gpio%d/direction",x->gpioNum);
 	x->fs = fopen(dirfile, "w" );
-	t=fwrite( "out", sizeof(char), 4, x->fs );
+	t=fwrite( "out", sizeof(char), 3, x->fs );
 	fclose(x->fs);
 	
 	//if (( 
 	x->fs = fopen( x->outfile, "w" );
 	//) < 0 )
-	//{
+	//
 	//	error( "Unable to open outfile" );
 	//	exit( 1 );
 	//}
