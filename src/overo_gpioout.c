@@ -92,7 +92,7 @@ void *overo_gpioout_new(t_floatarg f)
 	//	error( "Unable to open outfile" );
 	//	exit( 1 );
 	//}
-	t=fwrite( '0', sizeof(char), 1, x->fs );
+	t=fwrite( "0", sizeof(char), 1, x->fs );
 	x->set=0;
 	fclose(x->fs);
     return (void *)x;
