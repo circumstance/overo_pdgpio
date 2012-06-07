@@ -1,13 +1,25 @@
-#N canvas 575 400 450 300 10;
+#N canvas 573 405 450 300 10;
 #X obj 91 69 overo_gpioin 1;
 #X floatatom 88 128 5 0 0 0 - - -;
 #X obj 131 36 metro 50;
 #X floatatom 193 129 5 0 0 0 - - -;
 #X obj 196 70 overo_gpioin 2;
-#X obj 127 9 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 127 9 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
+#X obj 43 222 overo_gpioout 1;
+#X obj 39 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 149 170 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 153 223 overo_gpioout 2;
+#X obj 263 171 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 267 224 overo_gpioout 3;
 #X connect 0 0 1 0;
 #X connect 2 0 0 0;
 #X connect 2 0 4 0;
 #X connect 4 0 3 0;
 #X connect 5 0 2 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
