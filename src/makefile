@@ -3,9 +3,9 @@
 CC=cc
 STRIP=strip
 
-NAME=overo_gpioin
+SRC=$(shell ls *.c)
 
-Phony: $(NAME).pd_linux
+Phony: $(SRC:.c=.pd_linux)
 
 .SUFFIXES: .pd_linux
 
