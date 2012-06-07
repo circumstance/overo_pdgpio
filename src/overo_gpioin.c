@@ -70,7 +70,7 @@ void *overo_gpioin_new(t_floatarg f)
 	x->gpioNum=nums[min(1,max(0,((int) f)-1))]; //maps switch number to GPIO number
 	post("overo_gpoin: using GPIO(%d): switch %d\n",x->gpioNum,min(2,max(1,(int) f)));
 	sprintf(x->inputfile,"/sys/class/gpio/gpio%d/value",x->gpioNum);
-	post("inputfile: %s\n",x->inputfile);
+	//post("inputfile: %s\n",x->inputfile);
 
 	char gpionum[4];
 	sprintf(gpionum,"%d",x->gpioNum);
