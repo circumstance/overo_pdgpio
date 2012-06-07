@@ -80,7 +80,7 @@ void *overo_gpioout_new(t_floatarg f)
 	fclose(x->fs);
 	
 	char dirfile[30];
-	sprintf(dirfile,"/sys/class/gpio/gpio%d/value",x->gpioNum);
+	sprintf(dirfile,"/sys/class/gpio/gpio%d/direction",x->gpioNum);
 	x->fs = fopen(dirfile, "w" );
 	t=fwrite( "out", sizeof(char), 3, x->fs );
 	fclose(x->fs);
