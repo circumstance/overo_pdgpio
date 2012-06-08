@@ -79,7 +79,7 @@ void *overo_gpioout_new(t_floatarg f)
 	int t=fwrite( gpionum, sizeof(char), 3, x->fs );
 	fclose(x->fs);
 	
-	if (x->gpioNum==1) {
+	if (x->gpioNum==170) {
 		char dirfile[40];
 		sprintf(dirfile,"/sys/class/gpio/gpio%d/direction",x->gpioNum);
 		x->fs = fopen(dirfile, "w" );
