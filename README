@@ -1,0 +1,51 @@
+overo_pdgpio - PD External for GPIO input/output on Gumstix Overo systems
+
+Copyright (C) 2012 Tim Redfern
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser
+General Public License as published by the Free Software Foundation; either version 2.1 of the License,
+or (at your option) any later version.
+
+================================================================
+
+overo_pdgpio allows the state of GPIO pins on the overo 40 pin breakout connector to be used for input and output from within PD (or PDa)
+
+Information on these GPIOs is available here: 
+
+http://gumstix.org/hardware-design/overo-coms/74-overo-connectors/97-gumstix-overo-series-40-pin-header.html
+
+http://www.jumpnowtek.com/index.php?option=com_content&view=article&id=54&Itemid=60
+
+According to this info there should be 3 outputs available to a standard overo:
+
+GPIO144 (pin 30)
+GPIO145 (pin 29)
+GPIO170 (pin 19)
+
+and 3 inputs:
+
+GPIO114 (pin 4)
+GPIO146 (pin27)
+GPIO147 (pin 29)
+
+However I wasn't able to get GPIO146 to work under Ubuntu 12.04
+
+=================================================================
+WARNING! DO NOT USE THIS SOFTWARE WITH ANY COMPUTER OTHER THAN A GUMSTIX OVERO
+HARDWARE DAMAGE IS POSSIBLE BY MANIPULATION OF GPIO PORTS ON EMBEDDED SYSTEMS
+
+To use- 
+
+1. copy *.pd_linux and *.pd to:
+        EITHER the same folder as your patch, or the PD extras folder (/usr/lib/pd/extra)
+
+2. create an overo_gpioin or overo_gpiout object and look at the help file
+
+3. see the schematic (eagle cad files) in the overo_controlboard folder for wiring details
+
+=================================================================
+overo_pdgpio was developed exclusively for circumstance - Tomorrow the ground forgets you were here
+
+http://productofcircumstance.com/portfoliocpt/tomorrow-the-ground-forgets-you-were-here/
+
+Bugs, issues, suggestions: tim@eclectronics.org
